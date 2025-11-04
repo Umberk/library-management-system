@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--字体图标-->
+    <link href="javaex/pc/css/icomoon.css" rel="stylesheet"/>
+    <!--动画-->
+    <link href="javaex/pc/css/animate.css" rel="stylesheet"/>
+    <!--骨架样式-->
+    <link href="javaex/pc/css/common.css" rel="stylesheet"/>
+    <!--皮肤-->
+    <link href="javaex/pc/css/skin/tina.css" rel="stylesheet"/>
+    <!--jquery，不可修改版本-->
+    <script src="javaex/pc/lib/jquery-1.7.2.min.js"></script>
+    <!--全局动态修改-->
+    <script src="javaex/pc/js/common.js"></script>
+    <!--核心组件-->
+    <script src="javaex/pc/js/javaex.min.js"></script>
+    <!--表单验证-->
+    <script src="javaex/pc/js/javaex-formVerify.js"></script>
+    <title>图书管理系统-注册</title>
+    <style>
+        .bg-wrap, body, html {
+            height: 100%;
+        }
+
+        input {
+            line-height: normal;
+            -webkit-appearance: textfield;
+            background-color: white;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            padding: 1px;
+            border-width: 2px;
+            border-style: inset;
+            border-color: initial;
+            border-image: initial;
+        }
+
+        input[type="text"], input[type="password"] {
+            border: 0;
+            outline: 0;
+        }
+
+        input, button {
+            text-rendering: auto;
+            color: initial;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            margin: 0em;
+            font: 400 13.3333px Arial;
+        }
+
+        input[type=button] {
+            -webkit-appearance: button;
+            cursor: pointer;
+        }
+
+        .bg-wrap {
+            position: relative;
+            background: url(javaex/pc/images/bg.jpg) top left no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .main-cont-wrap {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -190px;
+            margin-top: -310px;
+            box-sizing: border-box;
+            width: 380px;
+            padding: 30px 30px 40px;
+            background: #fff;
+            box-shadow: 0 20px 30px 0 rgba(63, 63, 65, .06);
+            border-radius: 10px;
+        }
+
+        .form-title {
+            margin-bottom: 30px;
+        }
+
+        .form-title > span {
+            font-size: 20px;
+            color: #28a745;
+        }
+
+        .form-item {
+            margin-bottom: 20px;
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #e3e3e3;
+            box-sizing: border-box;
+        }
+
+        .form-txt {
+            display: inline-block;
+            width: 70px;
+            color: #595961;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .form-input {
+            border: 0;
+            outline: 0;
+            font-size: 14px;
+            color: #595961;
+            width: 200px;
+        }
+
+        .form-btn {
+            margin-top: 30px;
+        }
+
+        .ui-button {
+            display: block;
+            width: 320px;
+            height: 50px;
+            text-align: center;
+            color: #fff;
+            background: #28a745;
+            border-radius: 6px;
+            font-size: 16px;
+            border: 0;
+            outline: 0;
+        }
+        
+        .back-login {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .back-login a {
+            color: #2589ff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .back-login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="bg-wrap">
+    <div class="main-cont-wrap register-model">
+        <form id="registerForm">
+            <div class="form-title">
+                <span>用户注册</span>
+            </div>
+            <div class="form-item">
+                <span class="form-txt">用户名：</span>
+                <input type="text" class="form-input original" id="username" name="username" placeholder="请输入用户名"
+                       data-type="必填" error-pos="32"/>
+            </div>
+            <div class="form-item">
+                <span class="form-txt">昵称：</span>
+                <input type="text" class="form-input original" id="nickname" name="nickname" placeholder="请输入昵称"
+                       data-type="必填" error-pos="32"/>
+            </div>
+            <div class="form-item">
+                <span class="form-txt">密码：</span>
+                <input type="password" class="form-input original" name="password" id="password" placeholder="请输入密码"
+                       data-type="必填" error-pos="32"/>
+            </div>
+            <div class="form-item">
+                <span class="form-txt">确认密码：</span>
+                <input type="password" class="form-input original" name="confirmPassword" id="confirmPassword" 
+                       placeholder="请再次输入密码" data-type="必填" error-pos="32"/>
+            </div>
+            <div class="form-item">
+                <span class="form-txt">邮箱：</span>
+                <input type="text" class="form-input original" id="email" name="email" placeholder="请输入邮箱"/>
+            </div>
+            <div class="form-item">
+                <span class="form-txt">电话：</span>
+                <input type="text" class="form-input original" id="tel" name="tel" placeholder="请输入电话"/>
+            </div>
+            <div class="form-btn">
+                <input type="button" class="ui-button" id="registerBtn" value="注册"/>
+            </div>
+            <div class="back-login">
+                <a href="toLogin">已有账号？返回登录</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    // 注册
+    $("#registerBtn").on("click", function () {
+        var username = $("#username").val();
+        var nickname = $("#nickname").val();
+        var password = $("#password").val();
+        var confirmPassword = $("#confirmPassword").val();
+        var email = $("#email").val();
+        var tel = $("#tel").val();
+
+        // 验证必填项
+        if (!username || !nickname || !password || !confirmPassword) {
+            javaex.optTip({
+                content: "请填写完整信息!",
+                type: "error"
+            });
+            return;
+        }
+
+        // 验证密码一致性
+        if (password !== confirmPassword) {
+            javaex.optTip({
+                content: "两次密码输入不一致!",
+                type: "error"
+            });
+            return;
+        }
+
+        // 发送注册请求
+        $.ajax({
+            type: "POST",
+            url: "user/register",
+            contentType: "application/json",
+            data: JSON.stringify({
+                username: username,
+                nickname: nickname,
+                password: password,
+                email: email,
+                tel: tel
+            }),
+            success: function (result) {
+                if (result.code === 200) {
+                    javaex.optTip({
+                        content: "注册成功！即将跳转到登录页面...",
+                        type: "success"
+                    });
+                    setTimeout(function () {
+                        window.location.href = "toLogin";
+                    }, 2000);
+                } else {
+                    javaex.optTip({
+                        content: result.msg || "注册失败!",
+                        type: "error"
+                    });
+                }
+            },
+            error: function () {
+                javaex.optTip({
+                    content: "注册失败，请稍后重试!",
+                    type: "error"
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
+
+
